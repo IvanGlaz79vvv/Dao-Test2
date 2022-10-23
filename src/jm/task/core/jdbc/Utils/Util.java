@@ -1,4 +1,4 @@
-package Utils;
+package jm.task.core.jdbc.Utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

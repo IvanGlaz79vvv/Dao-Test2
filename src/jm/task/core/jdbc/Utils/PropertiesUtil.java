@@ -1,0 +1,27 @@
+package jm.task.core.jdbc.Utils;
+
+import java.io.IOException;
+import java.util.Properties;
+
+public class PropertiesUtil {
+    private static final Properties PROPERTIES = new Properties();
+
+    static {
+        loadproperties();
+    }
+
+    private PropertiesUtil() {
+    }
+
+    public static String get(String key) {
+        return PROPERTIES.getProperty(key);
+    }
+
+    private static void loadproperties() {
+        try (var inputStream = PropertiesUtil.class.getClassLoader().getResourceAsStream("application.properties")) {
+            PROPERTIES.load(inputStream);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
