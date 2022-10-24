@@ -61,7 +61,7 @@ public class UserService {
         System.exit(0);
     }
 
-    public static void getUserByName() throws SQLException {
+    public static void getUserByName() throws SQLException, IOException {
         System.out.println("Выбери name юзера:");
 
         String name = InClass.inputString();

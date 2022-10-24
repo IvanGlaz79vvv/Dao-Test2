@@ -2,10 +2,11 @@ package jm.task.core.jdbc;
 
 import jm.task.core.jdbc.service.UserService;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, IOException {
         System.out.println("Hello world!");
 
 
@@ -13,11 +14,11 @@ public class Main {
 //
 //        UserService.getAllUsers(); //Показать всех юзеров
 //
-//        UserService.saveUser(); //Добавить юзера
+        UserService.saveUser(); //Добавить юзера
 //
 //        UserService.getUserById(); //Выбрать юзера по id
 //
-        UserService.getUserByName(); //Выбрать юзера по name
+//        UserService.getUserByName(); //Выбрать юзера по name
 //
 //        UserService.getUserByPosition(); //Выбрать юзера по position
 //

@@ -10,7 +10,7 @@ public class InClass {
 
     public static String inputString() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        inString = String.valueOf(bufferedReader.readLine());
+        inString = bufferedReader.readLine();
         bufferedReader.close();
         return inString;
     }

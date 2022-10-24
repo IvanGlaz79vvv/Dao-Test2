@@ -73,7 +73,7 @@
           <description value="" />
           <database-type value="MYSQL" />
           <config-type value="BASIC" />
-          <database-version value="5.7" />
+          <database-version value="8.0" />
           <driver-source value="EXTERNAL" />
           <driver-library value="C:\Users\wk\IdeaProjects\mysql-connector-java-8.0.30.jar" />
           <driver value="com.mysql.cj.jdbc.Driver" />

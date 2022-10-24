@@ -19,7 +19,7 @@ public class Util {
                     PropertiesUtil.get(PASSWORD_KEY)
             );
         } catch (SQLException e) {
-            System.out.println("Ошибка подключения");
+            System.out.println("<<<Util.getConnection>>> Ошибка подключения");
             e.printStackTrace();
         }
         return connection;

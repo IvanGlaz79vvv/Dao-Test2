@@ -1,7 +1,6 @@
 package jm.task.core.jdbc.Dao;
 
 
-
 import jm.task.core.jdbc.Model.User;
 import jm.task.core.jdbc.Utils.Util;
 
@@ -32,7 +31,7 @@ public class Dao {
     private static final String SELECTid = "SELECT * FROM newtable WHERE id = ?";
     private static final String SELECTname = "SELECT * FROM newtable WHERE name = ?";
     private static final String SELECTposition = "SELECT * FROM newtable WHERE position = ?";
-    private static final String SELECTdate = "SELECT * FROM newtable WHERE date = ?";
+    private static final String SELECTdate = "SELECT * FROM newtable WHERE data = ?";
 //    private static User user = null;
 
 
@@ -65,6 +64,7 @@ public class Dao {
             }
         }
     }
+
     public static List<User> getAllUsers() throws SQLException {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
         System.out.println("getTransactionIsolation: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
@@ -93,6 +93,7 @@ public class Dao {
         }
         return arrayListnewTable;
     }
+
     public static void saveUser(String name, String position, String date) throws SQLException {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
         System.out.println("getTransactionIsolation: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
@@ -112,15 +113,14 @@ public class Dao {
             conn.setAutoCommit(true);
         }
     }
+
     public static User getUserById(int id) throws SQLException {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
-        System.out.println("getTransactionIsolation: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
+        System.out.println("<<<getUserById>>>: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
 
-        System.out.println("conn = " + conn);
         try (PreparedStatement preparedStatement = conn.prepareStatement(SELECTid)) {
 
             conn.setAutoCommit(false);
-
 
             preparedStatement.setInt(1, id);  // так мы подставляем вместо знака вопроса нужный id
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -142,6 +142,7 @@ public class Dao {
         }
         return user;
     }
+
     public static List<User> getUserByName(String name) throws SQLException {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
         System.out.println("getTransactionIsolation: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
@@ -197,37 +198,6 @@ public class Dao {
             conn.commit();
         } catch (SQLException e) {
             System.err.println("<<<getUserByName>>> Запущен rollback()" + e);
-            conn.rollback();
-        } finally {
-            conn.setAutoCommit(true);
-        }
-        return arrayUsersByPosition;
-    }
-    }
-    public static List<User> getUserByPosition(String position) throws SQLException {
-        conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
-        System.out.println("getTransactionIsolation: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
-
-        List<User> arrayUsersByPosition = new ArrayList<>();
-
-        try (PreparedStatement preparedStatement = conn.prepareStatement(SELECTposition)) {
-            conn.setAutoCommit(false);
-
-            preparedStatement.setString(1, position);  // так мы подставляем вместо знака вопроса нужный id
-            ResultSet resultSet = preparedStatement.executeQuery();
-
-            while (resultSet.next()) {
-                int userId = resultSet.getInt(1); // получили id пользователя
-                String name = resultSet.getString(2); // получили имя
-                position = resultSet.getString(3); // получили поле position
-                String date = resultSet.getString(4); // получили date
-                user = new User(userId, name, position, date); //собираем юзера
-
-                arrayUsersByPosition.add(user);
-            }
-            conn.commit();
-        } catch (SQLException e) {
-            System.err.println("<<<getUserByPosition>>> Запущен rollback()" + e);
             conn.rollback();
         } finally {
             conn.setAutoCommit(true);
