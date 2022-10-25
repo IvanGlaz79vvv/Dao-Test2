@@ -4,22 +4,30 @@ package jm.task.core.jdbc.Dao;
 import jm.task.core.jdbc.Model.User;
 import jm.task.core.jdbc.Utils.Util;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class Dao {
 
+    static String path = "C:\\Users\\wk\\Desktop\\Квартира.txt";
     private static User user = new User();
-
+    private static String line;
+    private static StringBuilder content = new StringBuilder();
+    BufferedReader reader = Files.newBufferedReader(Paths.get("src/main/resources/input.txt"));
     private static final Connection conn = Util.getConnection();
-
     private static final String CREATETABLE = "CREATE TABLE IF NOT EXISTS newtable"
             + "(id int PRIMARY KEY AUTO_INCREMENT, "
-            + "name varchar(100),"
-            + "position varchar(100), "
-            + "date D(100))";
+            + "name varchar(45),"
+            + "position varchar(45), "
+            + "date varchar(45))";
 
     private static final String TRUNCATE = "TRUNCATE TABLE newtable";
 
@@ -31,13 +39,16 @@ public class Dao {
     private static final String SELECTid = "SELECT * FROM newtable WHERE id = ?";
     private static final String SELECTname = "SELECT * FROM newtable WHERE name = ?";
     private static final String SELECTposition = "SELECT * FROM newtable WHERE position = ?";
-    private static final String SELECTdate = "SELECT * FROM newtable WHERE data = ?";
+    private static final String SELECTdate = "SELECT * FROM newtable WHERE date = ?";
+
+    public Dao() throws IOException {
+    }
 //    private static User user = null;
 
 
     public static void createTable() throws SQLException {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
-        System.out.println("getTransactionIsolation: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
+//        System.out.println("<<<createTable>>>: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
 
         try (Statement statement = conn.createStatement()) {
             System.out.println(conn.getTransactionIsolation());
@@ -46,28 +57,29 @@ public class Dao {
             statement.executeUpdate(CREATETABLE);
             conn.commit();
         } catch (SQLException e) {
+            e.printStackTrace();
             try {
                 conn.rollback();
-                System.out.println("^^^^^Сработал createUsersTable() -> rollback()^^^^^\n");
+                System.out.println("^^^^^<<<Dao>>> Сработал createTable -> rollback()^^^^^\n");
             } catch (SQLException ex) {
-                System.out.println("\n-----Начало ошибки rollback() createUsersTable()-----");
+                System.out.println("\n-----<<<Dao>>> Начало ошибки rollback() createTable-----");
                 ex.printStackTrace();
-                System.out.println("^^^^^Конец ошибки rollback() createUsersTable()^^^^^");
+                System.out.println("^^^^^<<<Dao>>> Конец ошибки rollback() createTable^^^^^");
             }
         } finally {
             try {
                 conn.setAutoCommit(true);
             } catch (SQLException e) {
-                System.out.println("-----Начало ошибки setAutoCommit(true) createUsersTable()-----");
+                System.out.println("-----<<<Dao>>> Начало ошибки setAutoCommit(true) createTable-----");
                 e.printStackTrace();
-                System.out.println("^^^^^Ошибка setAutoCommit(true) createUsersTable()^^^^^");
+                System.out.println("^^^^^<<<Dao>>> Ошибка setAutoCommit(true) createTable^^^^^");
             }
         }
     }
 
     public static List<User> getAllUsers() throws SQLException {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
-        System.out.println("getTransactionIsolation: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
+//        System.out.println("getTransactionIsolation: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
 
         List<User> arrayListnewTable = new ArrayList<>();
         conn.setAutoCommit(false);
@@ -96,10 +108,9 @@ public class Dao {
 
     public static void saveUser(String name, String position, String date) throws SQLException {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
-        System.out.println("getTransactionIsolation: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
+//        System.out.println("<<<Dao.saveUser>>>: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
 
         conn.setAutoCommit(false);
-        conn.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
         try (PreparedStatement pstmt = conn.prepareStatement(SAVEUSER)) {
             pstmt.setString(1, name);
             pstmt.setString(2, position);
@@ -114,9 +125,23 @@ public class Dao {
         }
     }
 
+    public static void addFromFile(String path) throws IOException {
+        Scanner scanner = new Scanner(new File(path));
+        while (scanner.hasNextLine()) {
+            String name = scanner.next();
+            String position = scanner.next();
+            String date = scanner.next();
+
+            System.out.println(name);
+            System.out.println(position);
+            System.out.println(date);
+            System.out.println();
+        }
+    }
+
     public static User getUserById(int id) throws SQLException {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
-        System.out.println("<<<getUserById>>>: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
+//        System.out.println("<<<getUserById>>>: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
 
         try (PreparedStatement preparedStatement = conn.prepareStatement(SELECTid)) {
 
@@ -145,7 +170,7 @@ public class Dao {
 
     public static List<User> getUserByName(String name) throws SQLException {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
-        System.out.println("getTransactionIsolation: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
+//        System.out.println("<<<getUserByName>>>: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
 
         List<User> arrayUsersByName = new ArrayList<>();
 
@@ -176,7 +201,7 @@ public class Dao {
 
     public static List<User> getUserByPosition(String position) throws SQLException {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
-        System.out.println("getTransactionIsolation: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
+        System.out.println("<<<getUserByPosition>>>: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
 
         List<User> arrayUsersByPosition = new ArrayList<>();
 
@@ -207,7 +232,7 @@ public class Dao {
 
     public void cleanUsersTable() throws SQLException {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
-        System.out.println("getTransactionIsolation: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
+        System.out.println("<<<cleanUsersTable>>>: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
 
         try (Statement statement = conn.createStatement()) {
             conn.setAutoCommit(false);
@@ -239,7 +264,7 @@ public class Dao {
 
     public static int getLastdId() throws SQLException {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
-        System.out.println("getTransactionIsolation: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
+//        System.out.println("<<<Dao.getLastdId>>>: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
 
         int userId;
         try (PreparedStatement preparedStatement = conn.prepareStatement("SELECT MAX(id) FROM newtable")) {
@@ -300,4 +325,5 @@ public class Dao {
             }
         }
     }
-}
+
+    }

@@ -38,6 +38,9 @@
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="453dc05f-2cdb-4a83-a00d-8c6a583c1d8e" />
   </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="453dc05f-2cdb-4a83-a00d-8c6a583c1d8e" dataset="sakila.actor" active-filter-id="" />
+  </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
   </component>

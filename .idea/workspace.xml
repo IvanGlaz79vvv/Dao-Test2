@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="200fb746-c93d-4727-8ae7-1f4a306f1f9c" name="Changes" comment="Новый Dao вроде рабочий">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/SystemInWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/Квартира.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dao-Test2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dao-Test2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Dao/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/Dao/Dao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Utils/PropertiesUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/Utils/PropertiesUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Utils/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/Utils/Util.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/InClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/InClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/UserService.java" afterDir="false" />
     </list>
@@ -32,13 +31,16 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2GX0TGokn7rK8A9P7LcR0BGPoXk" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -81,7 +83,8 @@
       <workItem from="1666519631231" duration="1246000" />
       <workItem from="1666522597178" duration="536000" />
       <workItem from="1666536957228" duration="9647000" />
-      <workItem from="1666601784354" duration="5710000" />
+      <workItem from="1666601784354" duration="12899000" />
+      <workItem from="1666631493776" duration="22080000" />
     </task>
     <task id="LOCAL-00001" summary="Новый Dao">
       <created>1666520010569</created>
@@ -97,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666565275987</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Новый Dao вроде рабочий">
+      <created>1666607549473</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1666607549473</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +137,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Новый Dao" />
     <MESSAGE value="Новый Dao вроде рабочий" />
     <option name="LAST_COMMIT_MESSAGE" value="Новый Dao вроде рабочий" />
