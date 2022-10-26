@@ -19,7 +19,7 @@ public class Main {
 
 //        UserService.createTable(); //Создать таблицу
 
-//        UserService.addFromFile();
+        UserService.addFromFile();
 //
 //        UserService.getAllUsers(); //Показать всех юзеров
 //
@@ -27,7 +27,7 @@ public class Main {
 //
 //        UserService.getUserById(); //Выбрать юзера по id
 //
-        UserService.getUserByName(); //Выбрать юзера по name
+//        UserService.getUserByName(); //Выбрать юзера по name
 //
 //        UserService.getUserByPosition(); //Выбрать юзера по position
 //
@@ -35,7 +35,6 @@ public class Main {
 //
 //        UserService.removeUserById(); //Удалить юзера по id
 
-//        String string = UserService.inputFile();
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
