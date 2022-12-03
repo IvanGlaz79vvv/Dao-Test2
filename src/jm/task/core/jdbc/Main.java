@@ -1,29 +1,44 @@
 package jm.task.core.jdbc;
 
-import jm.task.core.jdbc.Dao.Dao;
-import jm.task.core.jdbc.Model.User;
+import jm.task.core.jdbc.SwingPackage.SwingClass;
+import jm.task.core.jdbc.Utils.Util;
 import jm.task.core.jdbc.service.InClass;
 import jm.task.core.jdbc.service.UserService;
+import org.apache.poi.examples.hssf.usermodel.HSSFReadWrite;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
+import java.util.*;
 
 public class Main {
 
-    static String path = "C:\\Users\\wk\\Desktop\\Квартира.txt";
+    //    static String path = "C:\\Users\\wk\\Desktop\\Квартира.txt";
+    static String path = "C:\\Users\\wk\\Desktop\\Квартира.xls";
 
     public static void main(String[] args) throws SQLException, IOException, InterruptedException {
 
-//        System.out.println("Hello world!");
 
+        System.out.println("Hello world!");
+
+        /*HashMap < String, Integer> map = new HashMap<>();
+        map.put("KING", 100);
+        System.out.println("KING".hashCode());*/
 
 //        UserService.createTable(); //Создать таблицу
 
-        UserService.addFromFile();
+//        System.out.println(UserService.addFromExcel(/*path*/));
+
+        InClass.readFromExcel();
+
+
+//        UserService.saveUser(); //Добавить юзера
 //
 //        UserService.getAllUsers(); //Показать всех юзеров
 //
-//        UserService.saveUser(); //Добавить юзера
 //
 //        UserService.getUserById(); //Выбрать юзера по id
 //
