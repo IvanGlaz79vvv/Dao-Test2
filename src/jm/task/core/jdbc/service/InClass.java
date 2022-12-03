@@ -19,7 +19,7 @@ public class InClass {
     private static int inInt;
     private static String text;
 
-    static String path = "C:\\Users\\wk\\Desktop\\Квартира.xlsx";
+    static String path = "C:\\Users\\wk\\IdeaProjects\\Dao-Test2\\resources\\Квартира.xlsx";
 
     public static String inputString() throws IOException, SQLException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
