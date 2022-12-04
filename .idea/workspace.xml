@@ -2,8 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="200fb746-c93d-4727-8ae7-1f4a306f1f9c" name="Changes" comment="Работает чтение и вывод в консоль из xlsx">
-      <change afterPath="$PROJECT_DIR$/resources/Квартира.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/.~lock.ticket.xlsx#" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/ticket.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/ticket.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/ticket.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Квартира.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/35070c58-2974-4da7-8d91-0119767dc09e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/35070c58-2974-4da7-8d91-0119767dc09e.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/35070c58-2974-4da7-8d91-0119767dc09e/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/35070c58-2974-4da7-8d91-0119767dc09e/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/35070c58-2974-4da7-8d91-0119767dc09e/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/35070c58-2974-4da7-8d91-0119767dc09e/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/35070c58-2974-4da7-8d91-0119767dc09e/storage_v2/_src_/database/postgres.edMnLQ/schema/new_schema.IHWLKw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/35070c58-2974-4da7-8d91-0119767dc09e/storage_v2/_src_/database/postgres.edMnLQ/schema/new_schema.IHWLKw.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/35070c58-2974-4da7-8d91-0119767dc09e/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/35070c58-2974-4da7-8d91-0119767dc09e/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/35070c58-2974-4da7-8d91-0119767dc09e/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/35070c58-2974-4da7-8d91-0119767dc09e/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/35070c58-2974-4da7-8d91-0119767dc09e/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/35070c58-2974-4da7-8d91-0119767dc09e/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/35070c58-2974-4da7-8d91-0119767dc09e/storage_v2/_src_/database/postgres.edMnLQ/schema/todolist.5IXPsg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/35070c58-2974-4da7-8d91-0119767dc09e/storage_v2/_src_/database/postgres.edMnLQ/schema/todolist.5IXPsg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4040bb08-ca37-4b56-a1d7-e94668c2f69a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4040bb08-ca37-4b56-a1d7-e94668c2f69a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Dao/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/Dao/Dao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/InClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/InClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Квартира.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Квартира.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +80,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wk\IdeaProjects\Dao-Test2\resources" />
       <recent name="C:\Users\wk\IdeaProjects\Dao-Test2" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -102,7 +122,7 @@
       <workItem from="1670056672044" duration="2347000" />
       <workItem from="1670060112264" duration="2818000" />
       <workItem from="1670063743495" duration="4411000" />
-      <workItem from="1670068182614" duration="23985000" />
+      <workItem from="1670068182614" duration="35253000" />
     </task>
     <task id="LOCAL-00001" summary="Новый Dao">
       <created>1666520010569</created>
@@ -160,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670094139039</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Работает чтение и вывод в консоль из xlsx">
+      <created>1670094493818</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1670094493818</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -24,6 +24,7 @@ public class Main {
 
         System.out.println("Hello world!");
 
+
         /*HashMap < String, Integer> map = new HashMap<>();
         map.put("KING", 100);
         System.out.println("KING".hashCode());*/
@@ -32,13 +33,26 @@ public class Main {
 
 //        System.out.println(UserService.addFromExcel(/*path*/));
 
-        InClass.readFromExcel();
+
+
+        Map map = UserService.saveUserFromExcelXlsX();
+        map.remove("A1");
+        map.remove("B1");
+        map.remove("C1");
+        map.remove("D1");
+        map.remove("E1");
+        map.remove("F1");
+//        System.out.println("\n\n\n<<<<<<<<<<<<<< Print Map: >>>>>>>>>>>>>>> \n\n" + map);
+        Iterator iterator = map.values().iterator();
+        while (iterator.hasNext())
+        {
+            System.out.println(iterator.next());
+        }
 
 
 //        UserService.saveUser(); //Добавить юзера
 //
 //        UserService.getAllUsers(); //Показать всех юзеров
-//
 //
 //        UserService.getUserById(); //Выбрать юзера по id
 //

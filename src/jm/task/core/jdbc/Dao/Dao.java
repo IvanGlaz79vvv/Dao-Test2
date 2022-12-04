@@ -25,14 +25,16 @@ public class Dao {
     private static final Connection conn = Util.getConnection();
     private static final String CREATETABLE = "CREATE TABLE IF NOT EXISTS newtable"
             + "(id int PRIMARY KEY AUTO_INCREMENT, "
-            + "name varchar(45),"
-            + "position varchar(45), "
-            + "date varchar(45))";
+            + "passenger_no varchar(32),"
+            + "passenger_name varchar(45), "
+            + "flight_id int(45),"
+            + "seat_no varchar(4),"
+            + "cost varchar(32))";
 
     private static final String TRUNCATE = "TRUNCATE TABLE newtable";
 
     private static final String DROP = "DROP TABLE IF EXISTS newtable";
-    private static final String SAVEUSER = "INSERT INTO newtable (name, position, date) VALUES (?, ?, ?)";
+    private static final String SAVEUSER = "INSERT INTO newtable (passenger_no, passenger_name, flight_id, seat_no, cost) VALUES (?, ?, ?, ?, ?)";
     private static final String DELETE = "DELETE FROM newtable WHERE id = ?";
 
     private static final String SELECTALL = "SELECT * FROM newtable";
@@ -106,15 +108,25 @@ public class Dao {
         return arrayListnewTable;
     }
 
-    public static void saveUser(String name, String position, String date) throws SQLException {
+    public static void saveUser(String passenger_no, String passenger_name, int flight_id, String seat_no, String cost) throws SQLException {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
 //        System.out.println("<<<Dao.saveUser>>>: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
 
         conn.setAutoCommit(false);
         try (PreparedStatement pstmt = conn.prepareStatement(SAVEUSER)) {
-            pstmt.setString(1, name);
-            pstmt.setString(2, position);
-            pstmt.setString(3, date);
+            /*
+             + "passenger_no varchar(32),"
+            + "passenger_name varchar(45), "
+            + "flight_id int(45),"
+            + "seat_no varchar(4),"
+            + "cost numeric(8, 2))";
+            * */
+
+            pstmt.setString(1, passenger_no);
+            pstmt.setString(2, passenger_name);
+            pstmt.setInt(3, flight_id);
+            pstmt.setString(4, seat_no);
+            pstmt.setString(5, cost);
             pstmt.executeUpdate();
             conn.commit();
         } catch (SQLException e) {

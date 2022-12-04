@@ -52,15 +52,27 @@ public class UserService {
 
     public static void saveUser() throws IOException, SQLException {
 
-        System.out.println("name:");
-        String name = InClass.inputString();  //bufferedReader.readLine();
-        System.out.println("position:");
-        String position = InClass.inputString();
-        System.out.println("date:");
-        String date = InClass.inputString();
+        /*
+        + "(id int PRIMARY KEY AUTO_INCREMENT, "
+            + "passenger_no varchar(32),"
+            + "passenger_name varchar(45), "
+            + "flight_id int(45),"
+            + "seat_no varchar(4),"
+            + "cost numeric(8, 2))";
+         */
+        System.out.println("passenger_no:");
+        String passenger_no = InClass.inputString();  //bufferedReader.readLine();
+        System.out.println("passenger_name:");
+        String passenger_name = InClass.inputString();
+        System.out.println("flight_id:");
+        int flight_id = InClass.inputInteger();
+        System.out.println("seat_no:");
+        String seat_no = InClass.inputString();
+        System.out.println("cost:");
+        String cost = InClass.inputString();
 
         try {
-            Dao.saveUser(name, position, date);
+            Dao.saveUser(passenger_no,  passenger_name, flight_id,  seat_no,  cost);
         } catch (SQLException e) {
             System.err.println("<<<UserService.saveUser>>>: " + e);
         }
@@ -82,8 +94,8 @@ public class UserService {
 
 //<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-    public static void saveUserFromExcel() throws IOException, SQLException {
-       InClass.readFromExcel();
+    public static Map saveUserFromExcelXlsX() throws IOException, SQLException {
+      return InClass.readFromExcelXlsX();
     }
 
 
