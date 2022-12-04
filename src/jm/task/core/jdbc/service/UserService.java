@@ -95,7 +95,14 @@ public class UserService {
 //<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     public static Map saveUserFromExcelXlsX() throws IOException, SQLException {
-      return InClass.readFromExcelXlsX();
+        Map map = InClass.readFromExcelXlsX();
+        map.remove("A1");
+        map.remove("B1");
+        map.remove("C1");
+        map.remove("D1");
+        map.remove("E1");
+        map.remove("F1");
+        return map;
     }
 
 

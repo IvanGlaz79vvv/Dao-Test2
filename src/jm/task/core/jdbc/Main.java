@@ -35,15 +35,9 @@ public class Main {
 
 
 
-        Map map = UserService.saveUserFromExcelXlsX();
-        map.remove("A1");
-        map.remove("B1");
-        map.remove("C1");
-        map.remove("D1");
-        map.remove("E1");
-        map.remove("F1");
+//        Map map = UserService.saveUserFromExcelXlsX();
 //        System.out.println("\n\n\n<<<<<<<<<<<<<< Print Map: >>>>>>>>>>>>>>> \n\n" + map);
-        Iterator iterator = map.values().iterator();
+        Iterator iterator = UserService.saveUserFromExcelXlsX().values().iterator();
         while (iterator.hasNext())
         {
             System.out.println(iterator.next());
