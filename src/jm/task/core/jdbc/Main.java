@@ -1,16 +1,9 @@
 package jm.task.core.jdbc;
 
-import jm.task.core.jdbc.SwingPackage.SwingClass;
-import jm.task.core.jdbc.Utils.Util;
-import jm.task.core.jdbc.service.InClass;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import jm.task.core.jdbc.service.UserService;
-import org.apache.poi.examples.hssf.usermodel.HSSFReadWrite;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -22,7 +15,7 @@ public class Main {
     public static void main(String[] args) throws SQLException, IOException, InterruptedException {
 
 
-        System.out.println("Hello world!");
+        System.out.println("Hello world! \n");
 
 
         /*HashMap < String, Integer> map = new HashMap<>();
@@ -37,14 +30,14 @@ public class Main {
 
 //        Map map = UserService.saveUserFromExcelXlsX();
 //        System.out.println("\n\n\n<<<<<<<<<<<<<< Print Map: >>>>>>>>>>>>>>> \n\n" + map);
-        Iterator iterator = UserService.saveUserFromExcelXlsX().values().iterator();
-        while (iterator.hasNext())
-        {
-            System.out.println(iterator.next());
-        }
+//        Iterator iterator = UserService.saveUserFromExcelXlsX().values().iterator();
+//        while (iterator.hasNext())
+//        {
+//            System.out.println(map);
+//        }
 
 
-//        UserService.saveUser(); //Добавить юзера
+        UserService.saveUser(); //Добавить юзера
 //
 //        UserService.getAllUsers(); //Показать всех юзеров
 //
@@ -54,7 +47,7 @@ public class Main {
 //
 //        UserService.getUserByPosition(); //Выбрать юзера по position
 //
-//        UserService.getUserByDate(); //Выбрать юзера по date
+//        UserService.getUserByFlight_id(); //Выбрать юзера по Flight_id
 //
 //        UserService.removeUserById(); //Удалить юзера по id
 

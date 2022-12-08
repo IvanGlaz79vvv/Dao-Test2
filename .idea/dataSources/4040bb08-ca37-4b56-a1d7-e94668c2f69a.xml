@@ -10991,7 +10991,7 @@ User</ColNames>
       <Position>5</Position>
     </column>
     <column id="1835" parent="416" name="cost">
-      <DataType>decimal(8,2 digit)|0s</DataType>
+      <DataType>varchar(32)|0s</DataType>
       <Position>6</Position>
     </column>
     <index id="1836" parent="416" name="PRIMARY">

@@ -16,7 +16,7 @@ public class UserService {
     static String position = null;
     static String date = null;
 
-    private static String path = "C:\\Users\\wk\\Desktop\\Квартира.xls";
+    private static String path = "C:\\Users\\wk\\Desktop\\ticket.xls";
 
     private static Connection conn = Util.getConnection();
 
@@ -33,7 +33,7 @@ public class UserService {
         System.exit(0);
     }
 
-    public static void getAllUsers() throws SQLException {
+    /*public static void getAllUsers() throws SQLException {
         List<User> allUsers = Dao.getAllUsers();
 
         System.out.println(
@@ -48,7 +48,7 @@ public class UserService {
             System.out.println(printuser);
         }
         System.exit(0);
-    }
+    }*/
 
     public static void saveUser() throws IOException, SQLException {
 
@@ -142,7 +142,7 @@ public class UserService {
             System.exit(0);
         }
 
-        public static void getUserByPosition () throws SQLException, IOException {
+        /*public static void getUserByPosition () throws SQLException, IOException {
             System.out.println("Выбери position юзера:");
 
             String position = InClass.inputString();
@@ -161,14 +161,14 @@ public class UserService {
                 System.out.println(print);
             }
             System.exit(0);
-        }
+        }*/
 
-        public static void getUserByDate () throws SQLException, IOException {
-            System.out.println("Выбери date юзера:");
+        /*public static void getUserByyFlight_id () throws SQLException, IOException {
+            System.out.println("Выбери flight_id юзера:");
 
-            String date = InClass.inputString();
+            int flight_id = InClass.inputInteger();
 
-            List<User> arrayUsersDate = Dao.getUserByDate(date);
+            List<User> arrayUsersDate = Dao.getUserByFlight_id(flight_id);
             System.out.println(
                     "<<<UserService.getUserByDate>>>: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + Util.getConnection().getTransactionIsolation());
             System.out.println("Количество юзеров: " + arrayUsersDate.size());
@@ -177,7 +177,7 @@ public class UserService {
             }
 
             System.exit(0);
-        }
+        }*/
 
         public static void removeUserById () throws SQLException, IOException {
             System.out.println("Выбери id юзера для удаления:");
