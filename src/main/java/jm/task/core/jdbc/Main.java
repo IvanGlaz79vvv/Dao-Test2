@@ -1,34 +1,38 @@
 package jm.task.core.jdbc;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import jm.task.core.jdbc.SwingPackage.SwingClass;
+import jm.task.core.jdbc.Utils.PropertiesUtil;
+import jm.task.core.jdbc.Utils.Util;
+import jm.task.core.jdbc.service.InClass;
 import jm.task.core.jdbc.service.UserService;
+import org.apache.poi.examples.hssf.usermodel.HSSFReadWrite;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
-
-import java.time.Duration;
-import java.time.Instant;
 import java.util.*;
 
 public class Main {
 
     //    static String path = "C:\\Users\\wk\\Desktop\\Квартира.txt";
-    static String path = "C:\\Users\\wk\\Desktop\\Квартира.xls";
+//    static String path = "C:\\Users\\wk\\Desktop\\Квартира.xls";
 
     public static void main(String[] args) throws SQLException, IOException, InterruptedException {
 
-
-        System.out.println("Hello world! \n");
+        System.out.println("Hello world!");
 
 
         /*HashMap < String, Integer> map = new HashMap<>();
         map.put("KING", 100);
         System.out.println("KING".hashCode());*/
 
-//        UserService.createTable(); //Создать таблицу
+        UserService.createTable(); //Создать таблицу
 
 //        System.out.println(UserService.addFromExcel(/*path*/));
+
 
 
 //        Map map = UserService.saveUserFromExcelXlsX();
@@ -36,23 +40,13 @@ public class Main {
 //        Iterator iterator = UserService.saveUserFromExcelXlsX().values().iterator();
 //        while (iterator.hasNext())
 //        {
-//            System.out.println(map);
+//            System.out.println(iterator.next());
 //        }
 
 
 //        UserService.saveUser(); //Добавить юзера
 //
-
-//        long start = System.nanoTime();
-//        for (int i = 0; i < 700; i++) {
-//            System.out.println("i = " + i);
-
-        UserService.getAllUsers(); //Показать всех юзеров
-//         }
-//        long finish = System.nanoTime();
-//        long elapsed = finish - start;
-//        System.out.println("Прошло времени, наноСек: " + elapsed);
-//        System.exit(0);
+//        UserService.getAllUsers(); //Показать всех юзеров
 //
 //        UserService.getUserById(); //Выбрать юзера по id
 //
@@ -60,7 +54,7 @@ public class Main {
 //
 //        UserService.getUserByPosition(); //Выбрать юзера по position
 //
-//        UserService.getUserByFlight_id(); //Выбрать юзера по Flight_id
+//        UserService.getUserByDate(); //Выбрать юзера по date
 //
 //        UserService.removeUserById(); //Удалить юзера по id
 
@@ -68,6 +62,5 @@ public class Main {
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
         System.exit(0);
-
     }
 }

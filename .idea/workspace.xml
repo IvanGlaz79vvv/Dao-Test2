@@ -4,51 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="200fb746-c93d-4727-8ae7-1f4a306f1f9c" name="Changes" comment="В процессе правок. Методы закомменчены.">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_2_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_4_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_inject_jakarta_inject_api_2_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_persistence_jakarta_persistence_api_3_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_transaction_jakarta_transaction_api_2_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_3_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_12_18.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_runtime_4_10_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_core_3_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_3_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_3_0_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_6_0_2_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_orm_hibernate_core_6_1_6_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_4_2_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_3_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/hibernate.cfg.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticket.xlsx" afterDir="false" />
+    <list default="true" id="200fb746-c93d-4727-8ae7-1f4a306f1f9c" name="Changes" comment="Перед установко Hibernate">
+      <change afterPath="$PROJECT_DIR$/resources/mysql-connector-j-8.0.31.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/35070c58-2974-4da7-8d91-0119767dc09e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/35070c58-2974-4da7-8d91-0119767dc09e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4040bb08-ca37-4b56-a1d7-e94668c2f69a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4040bb08-ca37-4b56-a1d7-e94668c2f69a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/apache_poi.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/apache_poi1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4040bb08-ca37-4b56-a1d7-e94668c2f69a/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4040bb08-ca37-4b56-a1d7-e94668c2f69a/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4040bb08-ca37-4b56-a1d7-e94668c2f69a/storage_v2/_src_/schema/sakila.oXLGyQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4040bb08-ca37-4b56-a1d7-e94668c2f69a/storage_v2/_src_/schema/sakila.oXLGyQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4040bb08-ca37-4b56-a1d7-e94668c2f69a/storage_v2/_src_/schema/sys.zb4BAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4040bb08-ca37-4b56-a1d7-e94668c2f69a/storage_v2/_src_/schema/sys.zb4BAA.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dao-Test2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dao-Test2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/.~lock.ticket.xlsx#" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ticket.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ticket.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ticket.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ticket.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Dao/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/Dao/Dao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/SwingPackage/SwingClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/SwingPackage/SwingClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Utils/PropertiesUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/Utils/PropertiesUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Utils/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/Utils/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/InClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/service/InClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/SystemInWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/service/SystemInWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Dao/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/Dao/Dao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Utils/PropertiesUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/Utils/PropertiesUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Utils/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/Utils/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,18 +38,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="JpbToolWindowState">
-    <option name="myId2FirstActivated">
-      <map>
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
-      </map>
-    </option>
-    <option name="myId2Visible">
-      <map>
-        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
-      </map>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -101,13 +62,16 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "C:/Users/wk/IdeaProjects/Dao-Test2/resources",
+    "last_opened_file_path": "/home/wl/IdeaProjects/Dao-Test2/resources/mysql-connector-j-8.0.31.jar",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -118,6 +82,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources" />
+      <recent name="$PROJECT_DIR$/src/jm/task/core/jdbc/Utils" />
       <recent name="C:\Users\wk\IdeaProjects\Dao-Test2\resources" />
       <recent name="C:\Users\wk\IdeaProjects\Dao-Test2" />
     </key>
@@ -160,10 +126,13 @@
       <workItem from="1670056672044" duration="2347000" />
       <workItem from="1670060112264" duration="2818000" />
       <workItem from="1670063743495" duration="4411000" />
-      <workItem from="1670068182614" duration="37102000" />
-      <workItem from="1670161340910" duration="962000" />
-      <workItem from="1670176070330" duration="1389000" />
-      <workItem from="1670455933642" duration="16805000" />
+      <workItem from="1670068182614" duration="36389000" />
+      <workItem from="1670159003279" duration="4914000" />
+      <workItem from="1670314529146" duration="88000" />
+      <workItem from="1670366965073" duration="6290000" />
+      <workItem from="1670441339659" duration="313000" />
+      <workItem from="1670447801314" duration="1182000" />
+      <workItem from="1670597009390" duration="2380000" />
     </task>
     <task id="LOCAL-00001" summary="Новый Dao">
       <created>1666520010569</created>
@@ -235,35 +204,7 @@
       <option name="project" value="LOCAL" />
       <updated>1670130552464</updated>
     </task>
-    <task id="LOCAL-00011" summary="Заменил таблицу на Ticket">
-      <created>1670132521053</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1670132521053</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Заменил таблицу на Ticket">
-      <created>1670132583335</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1670132583335</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Заменил таблицу на Ticket">
-      <created>1670132607910</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1670132607910</updated>
-    </task>
-    <task id="LOCAL-00014" summary="В процессе правок. Методы закомменчены.">
-      <created>1670461602811</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1670461602811</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,8 +242,8 @@
     <MESSAGE value="Чтение и вывод в консоль из xlsx" />
     <MESSAGE value="Работает чтение и вывод в консоль из xlsx" />
     <MESSAGE value="Заменил таблицу на Ticket" />
-    <MESSAGE value="В процессе правок. Методы закомменчены." />
-    <option name="LAST_COMMIT_MESSAGE" value="В процессе правок. Методы закомменчены." />
+    <MESSAGE value="Перед установко Hibernate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Перед установко Hibernate" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -14,14 +14,19 @@ public final class PropertiesUtil {
     }
 
     public static String get(String key) {
+        System.out.println("PropertiesUtil.get отработал");
         return PROPERTIES.getProperty(key);
     }
 
-    private static void loadproperties() {
-        try (var inputStream = PropertiesUtil.class.getClassLoader().getResourceAsStream("application.properties")) {
+    public static void loadproperties() {
+        try (var inputStream = PropertiesUtil.class.getClassLoader().
+                getResourceAsStream("application.properties")) {
             PROPERTIES.load(inputStream);
+            System.out.println("loadproperties отработал");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("<<<<<loadproperties: IOException e>>>>>\n" + e);
+        }finally {
+
         }
     }
 }

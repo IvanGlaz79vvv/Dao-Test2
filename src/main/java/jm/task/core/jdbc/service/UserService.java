@@ -4,15 +4,11 @@ import jm.task.core.jdbc.Dao.Dao;
 import jm.task.core.jdbc.Model.User;
 import jm.task.core.jdbc.Utils.Util;
 import org.apache.batik.css.engine.value.StringValue;
-import org.apache.commons.collections4.list.TreeList;
-import org.apache.xmlbeans.impl.xb.xsdschema.Attribute;
 
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.time.Duration;
-import java.time.Instant;
 import java.util.*;
 
 public class UserService {
@@ -20,9 +16,7 @@ public class UserService {
     static String position = null;
     static String date = null;
 
-    private static List<User> allUsers = new ArrayList<>();
-
-    private static String path = "C:\\Users\\wk\\Desktop\\ticket.xls";
+    private static String path = "C:\\Users\\wk\\Desktop\\Квартира.xls";
 
     private static Connection conn = Util.getConnection();
 
@@ -40,7 +34,8 @@ public class UserService {
     }
 
     public static void getAllUsers() throws SQLException {
-        allUsers = Dao.getAllUsers();
+        List<User> allUsers = Dao.getAllUsers();
+
         System.out.println(
                 "<<<UserService.getUserByName>>>: \n 1 = UNCOMMITTED  " +
                         "\n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ " +
@@ -48,12 +43,11 @@ public class UserService {
                         Util.getConnection().getTransactionIsolation()
         );
 
-        System.out.println("\nВсего юзеров: " + allUsers.size() + "\n");//Dao.getAllUsers()
+        System.out.println("Всего юзеров: " + allUsers.size());
         for (User printuser : allUsers) {
-            System.out.println(printuser + "\n");
+            System.out.println(printuser);
         }
-
-//        System.exit(0);
+        System.exit(0);
     }
 
     public static void saveUser() throws IOException, SQLException {
@@ -75,10 +69,10 @@ public class UserService {
         System.out.println("seat_no:");
         String seat_no = InClass.inputString();
         System.out.println("cost:");
-        String cost = InClass.inputString();
+        double cost = Double.parseDouble(InClass.inputString());
 
         try {
-            Dao.saveUser(passenger_no, passenger_name, flight_id, seat_no, cost);
+            Dao.saveUser(passenger_no,  passenger_name, flight_id,  seat_no, cost);
         } catch (SQLException e) {
             System.err.println("<<<UserService.saveUser>>>: " + e);
         }
@@ -115,40 +109,40 @@ public class UserService {
 //<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
-    public static void getUserById() throws SQLException, IOException {
+        public static void getUserById () throws SQLException, IOException {
 
-        System.out.println("Выбери id юзера:");
-        int id = InClass.inputInteger();
+            System.out.println("Выбери id юзера:");
+            int id = InClass.inputInteger();
 
-        User user = Dao.getUserById(id);
-        System.out.println(user);
+            User user = Dao.getUserById(id);
+            System.out.println(user);
 
-        System.exit(0);
-    }
-
-    public static void getUserByName() throws SQLException, IOException {
-        System.out.println("Выбери name юзера:");
-
-        String name = InClass.inputString();
-
-        List<User> arrayUsersName = Dao.getUserByName(name);
-
-        System.out.println(
-                "<<<UserService.getUserByName>>>: \n 1 = UNCOMMITTED  " +
-                        "\n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ " +
-                        "\n 8 = SERIALIZABLE \n getTransactionIsolation: = " +
-                        Util.getConnection().getTransactionIsolation()
-        );
-
-        System.out.println("Количество юзеров: " + arrayUsersName.size());
-        for (User print : arrayUsersName) {
-            System.out.println(print);
+            System.exit(0);
         }
 
-        System.exit(0);
-    }
+        public static void getUserByName () throws SQLException, IOException {
+            System.out.println("Выбери name юзера:");
 
-        /*public static void getUserByPosition () throws SQLException, IOException {
+            String name = InClass.inputString();
+
+            List<User> arrayUsersName = Dao.getUserByName(name);
+
+            System.out.println(
+                    "<<<UserService.getUserByName>>>: \n 1 = UNCOMMITTED  " +
+                            "\n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ " +
+                            "\n 8 = SERIALIZABLE \n getTransactionIsolation: = " +
+                            Util.getConnection().getTransactionIsolation()
+            );
+
+            System.out.println("Количество юзеров: " + arrayUsersName.size());
+            for (User print : arrayUsersName) {
+                System.out.println(print);
+            }
+
+            System.exit(0);
+        }
+
+        public static void getUserByPosition () throws SQLException, IOException {
             System.out.println("Выбери position юзера:");
 
             String position = InClass.inputString();
@@ -167,14 +161,14 @@ public class UserService {
                 System.out.println(print);
             }
             System.exit(0);
-        }*/
+        }
 
-        /*public static void getUserByyFlight_id () throws SQLException, IOException {
-            System.out.println("Выбери flight_id юзера:");
+        public static void getUserByDate () throws SQLException, IOException {
+            System.out.println("Выбери date юзера:");
 
-            int flight_id = InClass.inputInteger();
+            String date = InClass.inputString();
 
-            List<User> arrayUsersDate = Dao.getUserByFlight_id(flight_id);
+            List<User> arrayUsersDate = Dao.getUserByDate(date);
             System.out.println(
                     "<<<UserService.getUserByDate>>>: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + Util.getConnection().getTransactionIsolation());
             System.out.println("Количество юзеров: " + arrayUsersDate.size());
@@ -183,17 +177,17 @@ public class UserService {
             }
 
             System.exit(0);
-        }*/
+        }
 
-    public static void removeUserById() throws SQLException, IOException {
-        System.out.println("Выбери id юзера для удаления:");
+        public static void removeUserById () throws SQLException, IOException {
+            System.out.println("Выбери id юзера для удаления:");
 
-        Scanner scannerRemove = new Scanner(System.in);
-        scannerRemove = new Scanner(System.in);
-        int id = InClass.inputInteger();
+            Scanner scannerRemove = new Scanner(System.in);
+            scannerRemove = new Scanner(System.in);
+            int id = InClass.inputInteger();
 
-        Dao.removeUserById(id);
+            Dao.removeUserById(id);
 
-        System.exit(0);
+            System.exit(0);
+        }
     }
-}

@@ -11,21 +11,22 @@ import java.sql.SQLException;
 
 
 public class Util {
-    private static final String URL_KEY = "db.url";
-    private static final String NAME_KEY = "db.username";
-    private static final String PASSWORD_KEY = "db.password";
-
+    private static final String URL_KEY = "jdbc:mysql://localhost:3306/newbd";//"db.url";
+    private static final String NAME_KEY = "root";//"db.username";
+    private static final String PASSWORD_KEY = "root";//"db.password";
     static Connection connection = null;
+
+
 
     public static Connection getConnection() {
         try {
-            connection = DriverManager.getConnection(
-                    PropertiesUtil.get(URL_KEY),
-                    PropertiesUtil.get(NAME_KEY),
-                    PropertiesUtil.get(PASSWORD_KEY)
-            );
+            connection = DriverManager.getConnection(URL_KEY, NAME_KEY, PASSWORD_KEY);
+//                    PropertiesUtil.get(URL_KEY),
+//                    PropertiesUtil.get(NAME_KEY),
+//                    PropertiesUtil.get(PASSWORD_KEY)
+
         } catch (SQLException e) {
-            System.out.println("<<<Util.getConnection>>> Ошибка подключения");
+            System.out.println("<<<Util getConnection()>>> Ошибка подключения");
             e.printStackTrace();
         }
         return connection;

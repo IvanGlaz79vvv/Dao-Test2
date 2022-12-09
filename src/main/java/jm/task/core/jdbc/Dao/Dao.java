@@ -3,7 +3,6 @@ package jm.task.core.jdbc.Dao;
 
 import jm.task.core.jdbc.Model.User;
 import jm.task.core.jdbc.Utils.Util;
-import org.apache.commons.collections4.list.TreeList;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -18,14 +17,10 @@ import java.util.Scanner;
 
 public class Dao {
 
-    static String path = "C:\\Users\\wk\\Desktop\\Квартира.xlsx]";
-    String passenger_no;
-    String passenger_name;
-    int flight_id;
-    String seat_no;
-    double cost;
-
-    private static User user = new User();
+    static String path = "C:\\Users\\wk\\Desktop\\Квартира.txt";
+    private static String passenger_no;
+    private static String passenger_name;
+    private static User user;// = new User(passenger_no, passenger_name, flight_id, seat_no, cost);
     private static String line;
     private static StringBuilder content = new StringBuilder();
     BufferedReader reader = Files.newBufferedReader(Paths.get("src/main/resources/input.txt"));
@@ -46,9 +41,9 @@ public class Dao {
 
     private static final String SELECTALL = "SELECT * FROM newtable";
     private static final String SELECTid = "SELECT * FROM newtable WHERE id = ?";
-    private static final String SELECTpassenger_no = "SELECT * FROM newtable WHERE passenger_no = ?";
-    private static final String SELECTpassenger_name = "SELECT * FROM newtable WHERE passenger_name = ?";
-    private static final String SELECTposition = "SELECT * FROM newtable WHERE passenger_name = ?";
+    private static final String SELECTname = "SELECT * FROM newtable WHERE name = ?";
+    private static final String SELECTposition = "SELECT * FROM newtable WHERE position = ?";
+    private static final String SELECTdate = "SELECT * FROM newtable WHERE date = ?";
 
     public Dao() throws IOException {
     }
@@ -90,19 +85,22 @@ public class Dao {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
 //        System.out.println("getTransactionIsolation: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
 
-        List<User> arrayListnewTable = new TreeList<>();
+        List<User> arrayListnewTable = new ArrayList<>();
         conn.setAutoCommit(false);
         try (ResultSet resultSet = conn.createStatement().executeQuery(SELECTALL)) {
 
+
+            //passenger_no, passenger_name, flight_id, seat_no, cost
             while (resultSet.next()) {
                 int userId = resultSet.getInt(1); // получили id пользователя
                 String passenger_no = resultSet.getString(2); // получили имя
                 String passenger_name = resultSet.getString(3); // получили поле position
-                int flight_id = resultSet.getInt(4); // получили date
+                int flight_id = resultSet.getInt(4);
                 String seat_no = resultSet.getString(5);
                 double cost = resultSet.getDouble(6);
+// получили date
 
-                user = new User(userId, passenger_no, passenger_name, flight_id, seat_no, cost);
+                user = new User(passenger_no, passenger_name, flight_id, seat_no, cost);
 
                 arrayListnewTable.add(user);
             }
@@ -116,11 +114,9 @@ public class Dao {
         return arrayListnewTable;
     }
 
-    public static void saveUser
-            (String passenger_no, String passenger_name,
-             int flight_id, String seat_no, String cost)
-            throws SQLException {
-
+    public static void saveUser(
+            String passenger_no, String passenger_name,
+            int flight_id, String seat_no, double cost) throws SQLException {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
 //        System.out.println("<<<Dao.saveUser>>>: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
 
@@ -131,14 +127,14 @@ public class Dao {
             + "passenger_name varchar(45), "
             + "flight_id int(45),"
             + "seat_no varchar(4),"
-            + "cost numeric(8, 2))";
+            + "cost numeric(8,2))";
             * */
 
             pstmt.setString(1, passenger_no);
             pstmt.setString(2, passenger_name);
             pstmt.setInt(3, flight_id);
             pstmt.setString(4, seat_no);
-            pstmt.setString(5, cost);
+            pstmt.setDouble(5, cost);
             pstmt.executeUpdate();
             conn.commit();
         } catch (SQLException e) {
@@ -176,13 +172,11 @@ public class Dao {
 
             while (resultSet.next()) {
                 int userId = resultSet.getInt(1); // получили id пользователя
-                String passenger_no = resultSet.getString(2); // получили имя
-                String passenger_name = resultSet.getString(3); // получили поле position
-                int flight_id = resultSet.getInt(4); // получили date
-                String seat_no = resultSet.getString(5);
-                double cost = resultSet.getDouble(6);
+                String name = resultSet.getString(2); // получили имя
+                String position = resultSet.getString(3); // получили поле position
+                String date = resultSet.getString(4); // получили date
 
-                user = new User(userId, passenger_no, passenger_name, flight_id, seat_no, cost);
+                user = new User(userId, name, position, date);
             }
             conn.commit();
         } catch (SQLException e) {
@@ -194,27 +188,24 @@ public class Dao {
         return user;
     }
 
-    public static List<User> getUserByPassenger_no(String passenger_no) throws SQLException {
+    public static List<User> getUserByName(String name) throws SQLException {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
 //        System.out.println("<<<getUserByName>>>: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
 
         List<User> arrayUsersByName = new ArrayList<>();
 
-        try (PreparedStatement preparedStatement = conn.prepareStatement(SELECTpassenger_no)) {  /*"SELECT * FROM newtable WHERE name = ? LIMIT 1"*/
+        try (PreparedStatement preparedStatement = conn.prepareStatement(SELECTname)) {  /*"SELECT * FROM newtable WHERE name = ? LIMIT 1"*/
             conn.setAutoCommit(false);
 
-            preparedStatement.setString(1, passenger_no);  // так мы подставляем вместо знака вопроса нужный passenger_no
+            preparedStatement.setString(1, name);  // так мы подставляем вместо знака вопроса нужный id
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
                 int userId = resultSet.getInt(1); // получили id пользователя
-                passenger_no = resultSet.getString(2); // получили имя
-                String passenger_name = resultSet.getString(3); // получили поле position
-                int flight_id = resultSet.getInt(4); // получили date
-                String seat_no = resultSet.getString(5);
-                double cost = resultSet.getDouble(6);
-
-                user = new User(userId, passenger_no, passenger_name, flight_id, seat_no, cost);
+                name = resultSet.getString(2); // получили имя
+                String position = resultSet.getString(3); // получили поле position
+                String date = resultSet.getString(4); // получили date
+                user = new User(userId, name, position, date); //собираем юзера
 
                 arrayUsersByName.add(user);
             }
@@ -228,7 +219,7 @@ public class Dao {
         return arrayUsersByName;
     }
 
-    public static List<User> getUserByName(String passenger_name) throws SQLException {
+    public static List<User> getUserByPosition(String position) throws SQLException {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
         System.out.println("<<<getUserByPosition>>>: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
 
@@ -237,18 +228,15 @@ public class Dao {
         try (PreparedStatement preparedStatement = conn.prepareStatement(SELECTposition)) {  /*"SELECT * FROM newtable WHERE position = ?*/
             conn.setAutoCommit(false);
 
-            preparedStatement.setString(1, passenger_name);  // так мы подставляем вместо знака вопроса нужный passenger_name
+            preparedStatement.setString(1, position);  // так мы подставляем вместо знака вопроса нужный position
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
                 int userId = resultSet.getInt(1); // получили id пользователя
-                String passenger_no = resultSet.getString(2); // получили имя
-                passenger_name = resultSet.getString(3); // получили поле position
-                int flight_id = resultSet.getInt(4); // получили date
-                String seat_no = resultSet.getString(5);
-                double cost = resultSet.getDouble(6);
-
-                user = new User(userId, passenger_no, passenger_name, flight_id, seat_no, cost); //собираем юзера
+                String name = resultSet.getString(2); // получили имя
+                position = resultSet.getString(3); // получили поле position
+                String date = resultSet.getString(4); // получили date
+                user = new User(userId, name, position, date); //собираем юзера
 
                 arrayUsersByPosition.add(user);
             }
@@ -308,28 +296,26 @@ public class Dao {
         return userId;
     }
 
-    public static List<User> getUserBypassenger_no(String passenger_no) throws SQLException {
+    public static List<User> getUserByDate(String date) throws SQLException {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
         System.out.println("getTransactionIsolation: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
 
-        List<User> arrayUsersByFlight_id = new ArrayList<>();
+        List<User> arrayUsersByDate = new ArrayList<>();
 
-        try (PreparedStatement preparedStatement = conn.prepareStatement(SELECTpassenger_no)) {  /*"SELECT * FROM newtable WHERE date = ? LIMIT 1"*/
+        try (PreparedStatement preparedStatement = conn.prepareStatement(SELECTdate)) {  /*"SELECT * FROM newtable WHERE date = ? LIMIT 1"*/
             conn.setAutoCommit(false);
 
-            preparedStatement.setString(1, passenger_no);  // так мы подставляем вместо знака вопроса нужный id
+            preparedStatement.setString(1, date);  // так мы подставляем вместо знака вопроса нужный id
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
                 int userId = resultSet.getInt(1); // получили id пользователя
-                passenger_no = resultSet.getString(2); // получили имя
-                String passenger_name = resultSet.getString(3); // получили поле position
-                int flight_id = resultSet.getInt(4); // получили date
-                String seat_no = resultSet.getString(5);
-                double cost = resultSet.getDouble(6);
+                String name = resultSet.getString(2); // получили имя
+                String position = resultSet.getString(3); // получили поле position
+                date = resultSet.getString(4); // получили date
 
-                user = new User(userId, passenger_no, passenger_name, flight_id, seat_no, cost);
-                arrayUsersByFlight_id.add(user);
+                user = new User(userId, name, position, date);
+                arrayUsersByDate.add(user);
             }
             conn.commit();
         } catch (SQLException e) {
@@ -338,7 +324,7 @@ public class Dao {
         } finally {
             conn.setAutoCommit(true);
         }
-        return arrayUsersByFlight_id;
+        return arrayUsersByDate;
     }
 
     public static void removeUserById(int id) throws SQLException {
@@ -360,4 +346,4 @@ public class Dao {
         }
     }
 
-}
+    }
