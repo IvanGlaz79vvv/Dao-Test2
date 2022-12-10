@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="200fb746-c93d-4727-8ae7-1f4a306f1f9c" name="Changes" comment="Заменил таблицу на Ticket">
+    <list default="true" id="200fb746-c93d-4727-8ae7-1f4a306f1f9c" name="Changes" comment="В процессе правок. Методы закомменчены.">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_2_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_4_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_inject_jakarta_inject_api_2_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_persistence_jakarta_persistence_api_3_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_transaction_jakarta_transaction_api_2_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_3_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_12_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_runtime_4_10_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_core_3_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_3_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_3_0_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_6_0_2_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_orm_hibernate_core_6_1_6_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_4_2_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_3_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/hibernate.cfg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticket.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4040bb08-ca37-4b56-a1d7-e94668c2f69a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4040bb08-ca37-4b56-a1d7-e94668c2f69a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/apache_poi.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/apache_poi1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Dao/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/Dao/Dao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/InClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/InClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dao-Test2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Dao-Test2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/.~lock.ticket.xlsx#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/ticket.csv" beforeDir="false" afterPath="$PROJECT_DIR$/ticket.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/ticket.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/ticket.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Dao/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/Dao/Dao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/SwingPackage/SwingClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/SwingPackage/SwingClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Utils/PropertiesUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/Utils/PropertiesUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/Utils/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/Utils/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/InClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/service/InClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/SystemInWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/service/SystemInWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jm/task/core/jdbc/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jm/task/core/jdbc/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +66,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -37,33 +89,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/wk/IdeaProjects/SwingTest1&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "true",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "C:/Users/wk/IdeaProjects/Dao-Test2/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;,
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\wk\IdeaProjects\Dao-Test2\resources" />
@@ -111,7 +163,7 @@
       <workItem from="1670068182614" duration="37102000" />
       <workItem from="1670161340910" duration="962000" />
       <workItem from="1670176070330" duration="1389000" />
-      <workItem from="1670455933642" duration="5598000" />
+      <workItem from="1670455933642" duration="16805000" />
     </task>
     <task id="LOCAL-00001" summary="Новый Dao">
       <created>1666520010569</created>
@@ -204,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670132607910</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="В процессе правок. Методы закомменчены.">
+      <created>1670461602811</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1670461602811</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,7 +301,8 @@
     <MESSAGE value="Чтение и вывод в консоль из xlsx" />
     <MESSAGE value="Работает чтение и вывод в консоль из xlsx" />
     <MESSAGE value="Заменил таблицу на Ticket" />
-    <option name="LAST_COMMIT_MESSAGE" value="Заменил таблицу на Ticket" />
+    <MESSAGE value="В процессе правок. Методы закомменчены." />
+    <option name="LAST_COMMIT_MESSAGE" value="В процессе правок. Методы закомменчены." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

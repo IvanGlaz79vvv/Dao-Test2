@@ -3,8 +3,12 @@ package jm.task.core.jdbc;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import jm.task.core.jdbc.service.UserService;
+
 import java.io.IOException;
 import java.sql.SQLException;
+
+import java.time.Duration;
+import java.time.Instant;
 import java.util.*;
 
 public class Main {
@@ -27,7 +31,6 @@ public class Main {
 //        System.out.println(UserService.addFromExcel(/*path*/));
 
 
-
 //        Map map = UserService.saveUserFromExcelXlsX();
 //        System.out.println("\n\n\n<<<<<<<<<<<<<< Print Map: >>>>>>>>>>>>>>> \n\n" + map);
 //        Iterator iterator = UserService.saveUserFromExcelXlsX().values().iterator();
@@ -37,9 +40,19 @@ public class Main {
 //        }
 
 
-        UserService.saveUser(); //Добавить юзера
+//        UserService.saveUser(); //Добавить юзера
 //
-//        UserService.getAllUsers(); //Показать всех юзеров
+
+//        long start = System.nanoTime();
+//        for (int i = 0; i < 700; i++) {
+//            System.out.println("i = " + i);
+
+        UserService.getAllUsers(); //Показать всех юзеров
+//         }
+//        long finish = System.nanoTime();
+//        long elapsed = finish - start;
+//        System.out.println("Прошло времени, наноСек: " + elapsed);
+//        System.exit(0);
 //
 //        UserService.getUserById(); //Выбрать юзера по id
 //
@@ -55,5 +68,6 @@ public class Main {
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
         System.exit(0);
+
     }
 }

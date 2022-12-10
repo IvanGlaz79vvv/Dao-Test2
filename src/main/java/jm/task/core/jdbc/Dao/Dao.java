@@ -3,6 +3,7 @@ package jm.task.core.jdbc.Dao;
 
 import jm.task.core.jdbc.Model.User;
 import jm.task.core.jdbc.Utils.Util;
+import org.apache.commons.collections4.list.TreeList;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -85,14 +86,13 @@ public class Dao {
         }
     }
 
-    /*public static List<User> getAllUsers() throws SQLException {
+    public static List<User> getAllUsers() throws SQLException {
         conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
 //        System.out.println("getTransactionIsolation: \n 1 = UNCOMMITTED  \n 2 = READ_COMMITTED \n 4 = REPEATABLE_READ \n 8 = SERIALIZABLE \n getTransactionIsolation: = " + conn.getTransactionIsolation());
 
-        List<User> arrayListnewTable = new ArrayList<>();
+        List<User> arrayListnewTable = new TreeList<>();
         conn.setAutoCommit(false);
         try (ResultSet resultSet = conn.createStatement().executeQuery(SELECTALL)) {
-
 
             while (resultSet.next()) {
                 int userId = resultSet.getInt(1); // получили id пользователя
@@ -114,7 +114,7 @@ public class Dao {
             conn.setAutoCommit(true);
         }
         return arrayListnewTable;
-    }*/
+    }
 
     public static void saveUser
             (String passenger_no, String passenger_name,
