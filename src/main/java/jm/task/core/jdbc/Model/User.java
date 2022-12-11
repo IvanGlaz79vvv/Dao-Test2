@@ -2,10 +2,24 @@ package jm.task.core.jdbc.Model;
 
 public class User {
 
-    int id;
+    private int id;
     private String passenger_no;
     private String passenger_name;
     private int flight_id;
+    private String seat_no;
+    private double cost;
+
+    public User(String passenger_no, String passenger_name, int flight_id, String seat_no, double cost) {
+    }
+
+    public User(int id, String passenger_no, String passenger_name, int flight_id, String seat_no, double cost) {
+        this.id = id;
+        this.passenger_no = passenger_no;
+        this.passenger_name = passenger_name;
+        this.flight_id = flight_id;
+        this.seat_no = seat_no;
+        this.cost = cost;
+    }
 
     public int getId() {
         return id;
@@ -55,68 +69,15 @@ public class User {
         this.cost = cost;
     }
 
-    private String seat_no;
-    private double cost;
-
-    public User(int id, String passenger_no, String passenger_name, int flight_id, String seat_no, double cost) {
-        this.id = id;
-        this.passenger_no = passenger_no;
-        this.passenger_name = passenger_name;
-        this.flight_id = flight_id;
-        this.seat_no = seat_no;
-        this.cost = cost;
-    }
-
-    public User() {
-    }
-
-    /*public User(String passenger_no, String passenger_name, int flight_id, String seat_no, double cost) {
-        this.id = id;
-        this.name = name;
-        this.position = position;
-        this.date = date;
-    }*/
-
-   /* public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String passenger_no() {
-        return passenger_no;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }*/
-
     @Override
     public String toString() {
-        return String.format(
-                "  User id = " + getId() + ";\n " +
-                        " passenger_no = " + getPassenger_no() + ";\n " +
-                        " passenger_name = " + getPassenger_name() + ";\n " +
-                        " flight_id = " + getFlight_id() + ";\n " +
-                        " seat_no = " + getSeat_no() + ";\n " +
-                        " cost = " + getCost());
+        return "User{" +
+                "id=" + id +
+                ", passenger_no='" + passenger_no + '\'' +
+                ", passenger_name='" + passenger_name + '\'' +
+                ", flight_id=" + flight_id +
+                ", seat_no='" + seat_no + '\'' +
+                ", cost=" + cost +
+                '}';
     }
 }
